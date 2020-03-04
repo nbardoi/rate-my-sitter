@@ -16,6 +16,10 @@ exports.landing = function(req, res) {
   res.render("landing");
 };
 
+exports.review = function (req, res) {
+  res.render('review');
+}
+
 exports.logout = function(req, res) {
   req.session.destroy(function(err) {
     res.redirect("/");
