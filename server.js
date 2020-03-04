@@ -4,6 +4,7 @@ var passport = require("passport");
 var session = require("express-session");
 var exphbs = require("express-handlebars");
 var PORT = process.env.PORT || 8080;
+require('dotenv').config();
 
 //Parse application body
 app.use(express.urlencoded({ extended: true }));
