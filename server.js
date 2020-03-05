@@ -8,7 +8,7 @@ var PORT = process.env.PORT || 8080;
 //Parse application body
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use("/public", express.static("public"));
+// app.use("/img", express.static("/img"));
 // For Passport
 // session secret
 app.use(
