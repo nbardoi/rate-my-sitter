@@ -1,21 +1,18 @@
 {
-  "name": "passport_auth",
+  "name": "rate-my-sitter",
   "version": "1.0.0",
-  "description": "Using Passport with Sequelize and MySQL",
+  "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Jcrpelaez/passport_auth.git"
+    "url": "git+https://github.com/nbardoi/rate-my-sitter.git"
   },
-  "author": "juan carlos pelaez",
+  "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Jcrpelaez/passport_auth/issues"
-  },
-  "homepage": "https://github.com/Jcrpelaez/passport_auth#readme",
   "dependencies": {
     "bcrypt-nodejs": "0.0.3",
     "bcryptjs": "^2.4.3",
@@ -28,6 +25,9 @@
     "mysql2": "^2.1.0",
     "passport": "^0.4.1",
     "passport-local": "^1.0.0",
-    "sequelize": "^5.21.3"
+    "sequelize": "^5.21.5"
+  },
+  "devDependencies": {
+    "dotenv": "^8.2.0"
   }
 }

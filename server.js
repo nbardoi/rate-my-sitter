@@ -4,12 +4,14 @@ var passport = require("passport");
 var session = require("express-session");
 var exphbs = require("express-handlebars");
 var PORT = process.env.PORT || 8080;
+require('dotenv').config();
 
 //Parse application body
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 // app.use("/public", express.static("public"));
 app.use(express.static("app/public"));
+// app.use("/img", express.static("/img"));
 // For Passport
 // session secret
 app.use(
@@ -42,9 +44,9 @@ require("./app/routes/api-routes.js")(app);
 // Sync Database and listen to local server
 models.sequelize
   .sync()
-  .then(function () {
-    app.listen(PORT, function (err) {
-      console.log("Server is running on port 8080 and database looks fine");
+  .then(function() {
+    app.listen(PORT, function(err) {
+      console.log("Server is running on port " + PORT + " and database looks fine");
     });
   })
   .catch(function (err) {
