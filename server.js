@@ -41,6 +41,9 @@ require("./app/config/passport/passport.js")(passport, models.user);
 
 require("./app/routes/api-routes.js")(app);
 
+app.get('*', function(req, res) {
+  res.redirect("/");
+});
 // Sync Database and listen to local server
 models.sequelize
   .sync()
