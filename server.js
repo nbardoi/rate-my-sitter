@@ -4,6 +4,7 @@ var passport = require("passport");
 var session = require("express-session");
 var exphbs = require("express-handlebars");
 var PORT = process.env.PORT || 8080;
+const path = require('path');
 require('dotenv').config();
 
 //Parse application body
@@ -42,7 +43,7 @@ models.sequelize
   .sync()
   .then(function() {
     app.listen(PORT, function(err) {
-      console.log("Server is running on port 5000 and database looks fine");
+      console.log("Server is running on port " + PORT + " and database looks fine");
     });
   })
   .catch(function(err) {
