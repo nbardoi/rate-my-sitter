@@ -108,7 +108,7 @@ $(document).ready(function() {
     noteContainer.empty();
     var messageH2 = $("<h3>");
     messageH2.css({ "text-align": "center", "margin-top": "50px" });
-    messageH2.html("Hello, what would you like to note today?");
+    messageH2.html("Review a sitter today!");
     noteContainer.append(messageH2);
   }
 
