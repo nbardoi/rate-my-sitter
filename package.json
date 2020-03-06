@@ -2,7 +2,7 @@
   "name": "passport_auth",
   "version": "1.0.0",
   "description": "Using Passport with Sequelize and MySQL",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
