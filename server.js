@@ -8,7 +8,8 @@ var PORT = process.env.PORT || 8080;
 //Parse application body
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use("/public", express.static("public"));
+// app.use("/public", express.static("public"));
+app.use(express.static("app/public"));
 // For Passport
 // session secret
 app.use(
@@ -36,14 +37,16 @@ var authRoute = require("./app/routes/auth.js")(app, passport);
 //load passport strategies
 require("./app/config/passport/passport.js")(passport, models.user);
 
+require("./app/routes/api-routes.js")(app);
+
 // Sync Database and listen to local server
 models.sequelize
   .sync()
-  .then(function() {
-    app.listen(PORT, function(err) {
-      console.log("Server is running on port 5000 and database looks fine");
+  .then(function () {
+    app.listen(PORT, function (err) {
+      console.log("Server is running on port 8080 and database looks fine");
     });
   })
-  .catch(function(err) {
+  .catch(function (err) {
     console.log(err, "Something went wrong with the Database Update!");
   });
