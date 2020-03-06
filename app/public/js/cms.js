@@ -1,15 +1,12 @@
-$(document).ready(function () {
-
+$(document).ready(function() {
   var url = window.location.search;
   var postId;
   var updating = false;
-
 
   if (url.indexOf("?post_id=") !== -1) {
     postId = url.split("=")[1];
     getPostData(postId);
   }
-
 
   var bodyInput = $("#body");
   var titleInput = $("#title");
@@ -34,7 +31,6 @@ $(document).ready(function () {
 
     console.log(newPost);
 
-
     if (updating) {
       newPost.id = postId;
       updatePost(newPost);
@@ -43,18 +39,15 @@ $(document).ready(function () {
     }
   });
 
-
   function submitPost(Post) {
-    $.post("/api/posts/", Post, function () {
+    $.post("/api/posts/", Post, function() {
       window.location.href = "/dashboard";
     });
   }
 
-
   function getPostData(id) {
-    $.get("/api/posts/" + id, function (data) {
+    $.get("/api/posts/" + id, function(data) {
       if (data) {
-
         titleInput.val(data.title);
         bodyInput.val(data.body);
         postCategorySelect.val(data.category);
@@ -69,7 +62,7 @@ $(document).ready(function () {
       method: "PUT",
       url: "/api/posts",
       data: post
-    }).then(function () {
+    }).then(function() {
       window.location.href = "/dashboard";
     });
   }

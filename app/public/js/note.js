@@ -1,8 +1,7 @@
 var dt = new Date();
 document.getElementById("datetime").innerHTML = moment().format("h:mm");
 
-$(document).ready(function () {
-
+$(document).ready(function() {
   var noteContainer = $(".note-container");
   var postCategorySelect = $("#category");
 
@@ -11,13 +10,12 @@ $(document).ready(function () {
   postCategorySelect.on("change", handleCategoryChange);
   var posts;
 
-
   function getPosts(category) {
     var categoryString = category || "";
     if (categoryString) {
       categoryString = "/category/" + categoryString;
     }
-    $.get("/api/posts" + categoryString, function (data) {
+    $.get("/api/posts" + categoryString, function(data) {
       console.log("Posts", data);
       posts = data;
       if (!posts || !posts.length) {
@@ -28,16 +26,14 @@ $(document).ready(function () {
     });
   }
 
-
   function deletePost(id) {
     $.ajax({
       method: "DELETE",
       url: "/api/posts/" + id
-    }).then(function () {
+    }).then(function() {
       getPosts(postCategorySelect.val());
     });
   }
-
 
   getPosts();
 
@@ -92,7 +88,6 @@ $(document).ready(function () {
     return newPostCard;
   }
 
-
   function handlePostDelete() {
     var currentPost = $(this)
       .parent()
@@ -100,7 +95,6 @@ $(document).ready(function () {
       .data("post");
     deletePost(currentPost.id);
   }
-
 
   function handlePostEdit() {
     var currentPost = $(this)
@@ -114,7 +108,7 @@ $(document).ready(function () {
     noteContainer.empty();
     var messageH2 = $("<h3>");
     messageH2.css({ "text-align": "center", "margin-top": "50px" });
-    messageH2.html("Hello, what would you like to note today?");
+    messageH2.html("Review a sitter today!");
     noteContainer.append(messageH2);
   }
 
