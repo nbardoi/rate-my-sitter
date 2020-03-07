@@ -3,7 +3,7 @@ var app = express();
 var passport = require("passport");
 var session = require("express-session");
 var exphbs = require("express-handlebars");
-var PORT = process.env.PORT || 8080;
+var PORT = process.env.PORT || 3000;
 require('dotenv').config();
 
 //Parse application body
