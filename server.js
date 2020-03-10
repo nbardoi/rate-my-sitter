@@ -3,8 +3,8 @@ var app = express();
 var passport = require("passport");
 var session = require("express-session");
 var exphbs = require("express-handlebars");
-var PORT = process.env.PORT || 8080;
-require('dotenv').config();
+var PORT = process.env.PORT || 3000;
+require("dotenv").config();
 
 //Parse application body
 app.use(express.urlencoded({ extended: true }));
@@ -46,9 +46,11 @@ models.sequelize
   .sync()
   .then(function() {
     app.listen(PORT, function(err) {
-      console.log("Server is running on port " + PORT + " and database looks fine");
+      console.log(
+        "Server is running on port " + PORT + " and database looks fine"
+      );
     });
   })
-  .catch(function (err) {
+  .catch(function(err) {
     console.log(err, "Something went wrong with the Database Update!");
   });
