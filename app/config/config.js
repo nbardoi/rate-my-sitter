@@ -1,7 +1,7 @@
 module.exports = {
   development: {
     username: "root",
-    password: "utsabootcamp1",
+    password: "Charger!36",
     database: "sequelize_passport",
     host: "127.0.0.1",
     dialect: "mysql"
