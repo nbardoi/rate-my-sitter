@@ -5,6 +5,7 @@ module.exports = function(app, passport) {
   app.get("/signin", authController.signin);
   app.get("/", authController.landing);
   app.get("/review", authController.review);
+  app.get("/about", authController.about);
 
   app.post(
     "/signup",
