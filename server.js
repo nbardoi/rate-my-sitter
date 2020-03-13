@@ -1,10 +1,30 @@
 var express = require("express");
 var app = express();
 var passport = require("passport");
+
 var session = require("express-session");
 var exphbs = require("express-handlebars");
 var PORT = process.env.PORT || 3000;
 require("dotenv").config();
+//inserting react
+require("babel-register");
+
+const React = require("react");
+
+require("babel-register")({
+  presets: [["react"]]
+  // ignore: []
+});
+
+// require("babel-core").transform("code", {
+//   presets: ["react"]
+// });
+const ReactDOMServer = require("react-dom/server");
+const About = React.createFactory(require("./app/components/about"));
+app.get("/about", (req, res, next) => {
+  const aboutHTML = ReactDOMServer.renderToStaticMarkup(About());
+  res.render("about", { about: aboutHTML });
+});
 
 //Parse application body
 app.use(express.urlencoded({ extended: true }));
@@ -41,6 +61,9 @@ require("./app/config/passport/passport.js")(passport, models.user);
 
 require("./app/routes/api-routes.js")(app);
 
+app.get("*", function(req, res) {
+  res.redirect("/");
+});
 // Sync Database and listen to local server
 models.sequelize
   .sync()
