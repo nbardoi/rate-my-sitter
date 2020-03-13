@@ -1,6 +1,17 @@
 var db = require("../models");
+var localStorage = require("localStorage");
 
 module.exports = function(app) {
+  app.get("/api/users/", function(req, res) {
+    db.User.findOne({
+      where: {
+        email: req.params.email
+      }
+    }).then(function(dbUser) {
+      res.json(dbUser);
+    });
+  });
+
   app.get("/api/posts/", function(req, res) {
     db.Post.findAll({}).then(function(dbPost) {
       res.json(dbPost);
@@ -32,7 +43,9 @@ module.exports = function(app) {
     db.Post.create({
       title: req.body.title,
       body: req.body.body,
-      category: req.body.category
+      category: req.body.category,
+      firstname: localStorage.getItem("firstname"),
+      lastname: localStorage.getItem("lastname")
     }).then(function(dbPost) {
       res.json(dbPost);
     });
