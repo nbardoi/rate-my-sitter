@@ -49,6 +49,7 @@ $(document).ready(function() {
   function createNewRow(post) {
     var newPostCard = $("<div>");
     newPostCard.addClass("card");
+    newPostCard.css("margin-bottom", "15px");
     var newPostCardHeading = $("<div>");
     newPostCardHeading.addClass("card-header");
     var deleteBtn = $("<button>");
@@ -59,10 +60,9 @@ $(document).ready(function() {
     editBtn.text("EDIT");
     editBtn.addClass("float-right");
     editBtn.addClass("edit btn btn-default");
-    var newPostTitle = $("<h4>");
+    var newPostTitle = $("<h2>");
     var newPostDate = $("<small>");
     var newPostCategory = $("<p>");
-    // newPostCategory.text("Rating: " + post.category);
     newPostCategory.text(post.category);
     newPostCategory.css({
       float: "right",
@@ -76,7 +76,7 @@ $(document).ready(function() {
     newPostBody.text(post.body);
     var formattedDate = new Date(post.createdAt);
     formattedDate = moment(formattedDate).format("MMMM Do YYYY");
-    var newPostDate = $("<p>");
+    var newPostDate = $("<h6>");
     newPostDate.text(formattedDate);
     newPostDate.addClass("date-container");
     newPostTitle.append(newPostDate);
