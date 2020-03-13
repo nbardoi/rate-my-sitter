@@ -54,9 +54,11 @@ $(document).ready(function() {
     var deleteBtn = $("<button>");
     deleteBtn.text("x");
     deleteBtn.addClass("delete btn btn-secondary");
+    deleteBtn.addClass("float-right");
     var editBtn = $("<button>");
     editBtn.text("EDIT");
     editBtn.addClass("edit btn btn-default");
+    editBtn.addClass("float-right");
     var newPostTitle = $("<h4>");
     var newPostDate = $("<small>");
     var newPostCategory = $("<p>");
@@ -101,7 +103,7 @@ $(document).ready(function() {
       .parent()
       .parent()
       .data("post");
-    window.location.href = "/cms?post_id=" + currentPost.id;
+    window.location.href = "/review?post_id=" + currentPost.id;
   }
 
   function displayEmpty() {
