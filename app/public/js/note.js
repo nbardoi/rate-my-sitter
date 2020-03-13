@@ -53,13 +53,16 @@ $(document).ready(function() {
     newPostCardHeading.addClass("card-header");
     var deleteBtn = $("<button>");
     deleteBtn.text("x");
+    deleteBtn.addClass("float-right");
     deleteBtn.addClass("delete btn btn-secondary");
     var editBtn = $("<button>");
     editBtn.text("EDIT");
+    editBtn.addClass("float-right");
     editBtn.addClass("edit btn btn-default");
     var newPostTitle = $("<h4>");
     var newPostDate = $("<small>");
     var newPostCategory = $("<p>");
+    // newPostCategory.text("Rating: " + post.category);
     newPostCategory.text(post.category);
     newPostCategory.css({
       float: "right",
@@ -101,7 +104,7 @@ $(document).ready(function() {
       .parent()
       .parent()
       .data("post");
-    window.location.href = "/cms?post_id=" + currentPost.id;
+    window.location.href = "/review?post_id=" + currentPost.id;
   }
 
   function displayEmpty() {

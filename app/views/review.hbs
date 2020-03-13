@@ -53,14 +53,12 @@
                         <label for="body">Review:</label>
                         <textarea class="form-control" rows="10" id="body"></textarea>
                         <div class="form-group">
-                            <label for="category">Rating</label>
+                            <label for="category">What kind of post is this?</label>
                             <select class="custom-select" id="category">
-                                <option value="#">Leave a Rating!</option>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
+                                {{!-- <option selected value="">What kind of post is this?</option> --}}
+                                <option value="Job Post">Job Post</option>
+                                <option value="Sitter Review">Sitter Review</option>
+                                <option value="General Post">General Post</option>
                             </select>
                         </div>
                         <br />
