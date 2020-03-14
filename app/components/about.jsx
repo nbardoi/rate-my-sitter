@@ -5,16 +5,16 @@ const AboutContent = require("./aboutContent");
 class About extends React.Component {
   constructor(props) {
     super(props);
-    this.handleClick = this.handleClick.bind(this);
+    // this.handleClick = this.handleClick.bind(this);
     this.state = { selectedOption: "about-us" };
 
-    //this.updateSelected = this.updateSelected.bind(this);
+    this.updateSelected = this.updateSelected.bind(this);
   }
 
   updateSelected(newOption) {
     const newState = Object.assign(this.state, { selectedOption: newOption });
     this.setState({ selectedOption: "yfkjfkjhkjhkjh" }, () => {
-      console.log(this.state);
+      console.log(this.state.newState);
     });
   }
 
