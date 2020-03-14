@@ -3,11 +3,7 @@ var localStorage = require("localStorage");
 
 module.exports = function(app) {
   app.get("/api/users/", function(req, res) {
-    db.User.findOne({
-      where: {
-        email: req.params.email
-      }
-    }).then(function(dbUser) {
+    db.user.findAll({}).then(function(dbUser) {
       res.json(dbUser);
     });
   });

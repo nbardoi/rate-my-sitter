@@ -6,9 +6,6 @@ module.exports = function(passport, user) {
   var User = user;
   var LocalStrategy = require("passport-local").Strategy;
 
-  // var firstname = firstname;
-  // var lastname = lastname;
-
   //serialize
   passport.serializeUser(function(user, done) {
     done(null, user.id);
