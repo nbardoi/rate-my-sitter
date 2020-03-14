@@ -56,11 +56,14 @@ $(document).ready(function() {
     deleteBtn.text("x");
     deleteBtn.addClass("float-right");
     deleteBtn.addClass("delete btn btn-secondary");
+    deleteBtn.addClass("float-right");
     var editBtn = $("<button>");
     editBtn.text("EDIT");
     editBtn.addClass("float-right");
     editBtn.addClass("edit btn btn-default");
+
     var newPostTitle = $("<h2>");
+
     var newPostDate = $("<small>");
     var newPostCategory = $("<p>");
     newPostCategory.text(post.category);
