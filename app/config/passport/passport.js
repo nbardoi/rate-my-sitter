@@ -1,6 +1,8 @@
 var bCrypt = require("bcrypt-nodejs");
+var localStorage = require('localStorage');
 
 module.exports = function(passport, user) {
+  localStorage.clear();
   var User = user;
   var LocalStrategy = require("passport-local").Strategy;
 
@@ -51,6 +53,7 @@ module.exports = function(passport, user) {
               lastname: req.body.lastname
             };
 
+
             User.create(data).then(function(newUser, created) {
               if (!newUser) {
                 return done(null, false);
@@ -59,6 +62,16 @@ module.exports = function(passport, user) {
               if (newUser) {
                 return done(null, newUser);
               }
+
+              var firstname = data.firstname;
+              var lastname = data.firstname;
+
+              localStorage.clear();
+
+            // Store all content into localStorage
+            localStorage.setItem("firstname", firstname);
+            localStorage.setItem("lastname", lastname);
+
             });
           }
         });
@@ -94,9 +107,19 @@ module.exports = function(passport, user) {
               return done(null, false, { message: "Incorrect password." });
             }
 
+            var firstname = user.firstname;
+            var lastname = user.lastname;
+
+            localStorage.clear();
+
+            // Store all content into localStorage
+            localStorage.setItem("firstname", firstname);
+            localStorage.setItem("lastname", lastname);
+
             var userinfo = user.get();
 
             return done(null, userinfo);
+            
           })
           .catch(function(err) {
             console.log("Error:", err);
@@ -104,8 +127,14 @@ module.exports = function(passport, user) {
             return done(null, false, {
               message: "Something went wrong with your Signin"
             });
+
           });
       }
     )
   );
+        // localStorage.clear();
+
+        // // Store all content into localStorage
+        // localStorage.setItem("firstname", firstname);
+        // localStorage.setItem("lastname", lastname);
 };
