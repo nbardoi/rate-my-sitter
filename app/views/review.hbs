@@ -15,30 +15,7 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-        <div class="container">
-            <a class="navbar-brand" href="#">Rate my sitter</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
-                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="dashboard">Home
-
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/signin">Sign out</a>
-                    </li>
-
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    <br>
+    <a href="/signin" class="myButton">Sign Out</a>
 
     {{!-- body --}}
     <div class="container3">
@@ -53,12 +30,14 @@
                         <label for="body">Review:</label>
                         <textarea class="form-control" rows="10" id="body"></textarea>
                         <div class="form-group">
-                            <label for="category">What kind of post is this?</label>
+                            <label for="category">Rating</label>
                             <select class="custom-select" id="category">
-                                {{!-- <option selected value="">What kind of post is this?</option> --}}
-                                <option value="Job Post">Job Post</option>
-                                <option value="Sitter Review">Sitter Review</option>
-                                <option value="General Post">General Post</option>
+                                <option value="#">Leave a Rating!</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
                             </select>
                         </div>
                         <br />
