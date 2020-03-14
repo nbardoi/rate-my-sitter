@@ -1,9 +1,13 @@
-import React from 'react';
-import './App.css';
+import React from "react";
+import "./App.css";
+import Footer from "./components/footer";
 
 function App() {
   return (
-    <div></div>
+    <Router>
+      <div></div>
+      <Footer />
+    </Router>
   );
 }
 
