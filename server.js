@@ -16,9 +16,6 @@ require("babel-register")({
   // ignore: []
 });
 
-// require("babel-core").transform("code", {
-//   presets: ["react"]
-// });
 const ReactDOMServer = require("react-dom/server");
 const About = React.createFactory(require("./app/components/about"));
 app.get("/about", (req, res, next) => {
