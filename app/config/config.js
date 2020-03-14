@@ -8,7 +8,9 @@ module.exports = {
   },
   test: {
     username: "root",
+
     password: null,
+
     database: "sequelize_passport",
     host: "localhost",
     dialect: "mysql"
