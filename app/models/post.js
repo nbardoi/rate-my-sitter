@@ -16,14 +16,7 @@ module.exports = function(sequelize, DataTypes) {
     },
     category: {
       type: DataTypes.STRING,
-    },
-    firstname: {
-      type: DataTypes.STRING,
-      notEmpty: true
-    },
-    lastname: {
-      type: DataTypes.STRING,
-      notEmpty: true
+      defaultValue: "Personal"
     }
   });
   return Post;
