@@ -1,6 +1,7 @@
 var lsEmail = localStorage.getItem("email");
 console.log(lsEmail);
 
+
 function getUserData() {
     $.ajax({
         method: "GET",
