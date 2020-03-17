@@ -74,11 +74,15 @@ $(document).ready(function() {
     var newPostBody = $("<p>");
     newPostTitle.text(post.title + " ");
     newPostBody.text(post.body);
+    var newPostAuthor = $("<h5>")
+    newPostAuthor.text(post.firstname + " " + post.lastname)
+    newPostAuthor.addClass("author-container");
     var formattedDate = new Date(post.createdAt);
     formattedDate = moment(formattedDate).format("MMMM Do YYYY");
     var newPostDate = $("<h6>");
     newPostDate.text(formattedDate);
     newPostDate.addClass("date-container");
+    newPostTitle.append(newPostAuthor);
     newPostTitle.append(newPostDate);
     newPostCardHeading.append(deleteBtn);
     newPostCardHeading.append(editBtn);
