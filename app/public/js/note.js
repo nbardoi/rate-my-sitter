@@ -52,6 +52,8 @@ $(document).ready(function() {
     newPostCard.css("margin-bottom", "15px");
     var newPostCardHeading = $("<div>");
     newPostCardHeading.addClass("card-header");
+
+    if (post.firstname === localStorage.getItem("firstname")) {
     var deleteBtn = $("<button>");
     deleteBtn.text("x");
     deleteBtn.addClass("float-right");
@@ -60,6 +62,8 @@ $(document).ready(function() {
     editBtn.text("EDIT");
     editBtn.addClass("float-right");
     editBtn.addClass("edit btn btn-default");
+    }
+    
     var newPostTitle = $("<h2>");
     var newPostDate = $("<small>");
     var newPostCategory = $("<p>");

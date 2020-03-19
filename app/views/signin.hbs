@@ -1,21 +1,21 @@
 <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-    <a class="navbar-brand" href="#">Rate my sitter</a>
+    <a class="navbar-brand" href="#">Rate-My-Sitter</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
         aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto">
+        <ul class="navbar-nav ml-auto active">
             <li class="nav-item active">
                 <a class="nav-link" href="/landing">Home
 
                 </a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item active">
                 <a class="nav-link" href="/about">About</a>
             </li>
 
-            <li class="nav-item">
+            <li class="nav-item active">
                 <a class="nav-link" href="/signup">Join now</a>
             </li>
         </ul>
@@ -42,7 +42,7 @@
             </h5>
             <hr>
             <p class="lead mt-4">
-                New user? <a href="/signup">Join Now</a>
+                New user? <a href="/signup" id="join-now">Join Now</a>
             </p>
         </div>
     </div>
@@ -53,6 +53,11 @@
     <script src= "js/signin.js" type="text/javascript"></script>
     
 <style>
+
+    nav.navbar {
+         background-color: black !important;
+    }
+    
     h5 {
         background: white;
         text-transform: uppercase;
@@ -73,7 +78,9 @@
         color: black;
     }
 
-
+    #join-now {
+        color: red;
+    }
 
     #signup {
         font-family: "News Cycle", "Arial Narrow Bold", sans-serif;
