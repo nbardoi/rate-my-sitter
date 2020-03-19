@@ -5,7 +5,14 @@ const Navbar = props => {
   //   console.log(selectedOption);
   return (
     <div>
-      <ul id="nav">
+      <ul
+        id="nav"
+        style={{
+          listStyleType: "none",
+          padding: "20px",
+          fontColor: "grey"
+        }}
+      >
         <li className={selectedOption === "about-us" ? "active" : ""}>
           <a href="#" onClick={props.handleClick("about-us")}>
             About

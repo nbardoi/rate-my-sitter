@@ -23,13 +23,30 @@ class About extends React.Component {
     return (
       <div className="container">
         <div className="row">
-          <div className="col-md-4" style={{ border: "2px solid red" }}>
+          <div
+            className="col-md-4"
+            style={{
+              marginTop: "100px",
+
+              fontSize: "20px",
+              padding: "10px",
+              listStyleType: "none"
+            }}
+          >
             <Navbar
               selectedOption={this.state.selectedOption}
               handleClick={this.updateSelected}
             />
           </div>
-          <div className="col-md-8" style={{ border: "2px solid red" }}>
+          <div
+            className="col-md-8"
+            style={{
+              marginTop: "80px",
+              fontSize: "20px",
+              fontWeight: "300",
+              padding: "40px 80px 40px 80px"
+            }}
+          >
             <AboutContent selectedOption={this.state.selectedOption} />
           </div>
         </div>
